@@ -1,0 +1,159 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Task_management-primary: mat.define-palette(mat.$indigo-palette);
+$Task_management-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Task_management-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Task_management-theme: mat.define-light-theme((
+  color: (
+    primary: $Task_management-primary,
+    accent: $Task_management-accent,
+    warn: $Task_management-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Task_management-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//////!
+
+// Define colors for light and dark themes
+:root {
+  --light-bg-color: #f9f9f9;
+  --light-task-bg-color: #ffffff;
+  --light-text-color: #333;
+  --light-border-color: #ddd;
+  --light-primary-color: #6200ea;
+
+  --dark-bg-color: #121212;
+  --dark-task-bg-color: #1e1e1e;
+  --dark-text-color: #ddd;
+  --dark-border-color: #444;
+  --dark-primary-color: #bb86fc;
+
+
+    /* Light Mode Colors */
+    --light-background: #ffffff;
+    --light-text: #000000;
+
+    /* Dark Mode Colors */
+    --dark-background: #1a1a1a;
+    --dark-text: #cfcfcf; /* Slightly lighter text */
+    --dark-text-dark: #ffffff; /* A darker white text */
+}
+
+// Set default colors for light mode
+body {
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+// Dark theme class
+body.dark-theme {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+// Common Container Styles
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// Button styles
+button {
+  background-color: var(--light-primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+// Dark mode button
+body.dark-theme button {
+  background-color: var(--dark-primary-color);
+}
+
+// Input Styles
+input[type='text'] {
+  padding: 10px;
+  border: 1px solid var(--light-border-color);
+  border-radius: 5px;
+  outline: none;
+  width: calc(100% - 40px);
+}
+
+body.dark-theme input[type='text'] {
+  background-color: var(--dark-task-bg-color);
+  color: var(--dark-text-color);
+  border: 1px solid var(--dark-border-color);
+}
+
+
+
+
+//!
+.toast-success {
+  background-color: #4CAF50 !important;  // Light green background
+  color: white !important;                // White text
+  // border: 2px solid #2E7D32 !important;   // Darker green border
+  width: 30% !important;
+  border-radius: 10px !important;
+  margin: 20px;
+  padding: 20px;
+}
+
+.toast-error {
+  background-color: #F44336 !important;  // Red background
+  color: white !important;               // White text
+}
+
+.toast-info {
+  background-color: #2196F3 !important;  // Blue background
+  color: white !important;               // White text
+}
+
+.toast-warning {
+  background-color: #FF9800 !important;  // Orange background
+  color: black !important;               // Black text
+}

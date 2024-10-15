@@ -1,0 +1,49 @@
+.task-list-container {
+  background: var(--light-task-bg-color);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark-theme .task-list-container {
+  background: var(--dark-task-bg-color);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+// Task List Layout
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  cursor: pointer;
+  // border: #aaaa 1px solid;
+}
+
+// Add Task Form Styles
+form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button.add-task-btn {
+  font-size: 18px;
+  background-color: var(--light-primary-color);
+}
+
+body.dark-theme button.add-task-btn {
+  background-color: var(--dark-primary-color);
+}
+
+.task-item {
+  border: #bb86fc  2px solid;
+  border-radius: 20px;
+  text-align: center;
+  &:hover {
+    border: #6200ea 2px solid;}
+}
+
+

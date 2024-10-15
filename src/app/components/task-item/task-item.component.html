@@ -1,0 +1,8 @@
+<div class="task-item" [@taskState]="taskState"  [class.completed]="task.completed">
+<div class="task-title">
+  <h3 >{{ task.title }}</h3>
+  <p [ngStyle]="{'background-color': task.completed ? 'green' : 'red', 'color': task.completed ? 'black' : 'white'}"  (click)="onToggle()">
+    {{ task.completed ? 'Completed' : 'Not Completed' }}
+  </p>
+</div>
+</div>

@@ -1,0 +1,46 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --task-bg-color: #f0f0f0;
+  --primary-color: #6200ea;
+}
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --task-bg-color: #1f1f1f;
+  --primary-color: #bb86fc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  padding: 16px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.toggle-theme {
+  width: 40%;
+  margin-inline: auto;
+  border: #bb86fc 2.5px solid;
+  border-radius: 25px;
+  &:hover {
+    border-color: #6200ea;
+  }
+}

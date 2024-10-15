@@ -1,0 +1,25 @@
+<div class="task-list-container">
+  <!-- Add Task Form -->
+  <form (submit)="addTask()" #taskForm="ngForm">
+    <input
+      type="text"
+      name="title"
+      placeholder="Add a new task"
+      [(ngModel)]="newTaskTitle"
+      required
+    />
+    <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
+  </form>
+
+  <!-- Task List -->
+  <div class="task-list" [@taskAnimation]="tasks.length">
+    <app-task-item class="task-item"
+      *ngFor="let task of tasks; let i = index"
+      [task]="task"
+      (toggle)="toggleCompletion(task)"
+    ></app-task-item>
+  </div>
+
+  <!-- Delete Completed Tasks Button -->
+  <button (click)="deleteCompletedTasks()">Delete Completed Tasks</button>
+</div>
