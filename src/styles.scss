@@ -131,29 +131,3 @@ body.dark-theme input[type='text'] {
 
 
 
-
-//!
-.toast-success {
-  background-color: #4CAF50 !important;  // Light green background
-  color: white !important;                // White text
-  // border: 2px solid #2E7D32 !important;   // Darker green border
-  width: 30% !important;
-  border-radius: 10px !important;
-  margin: 20px;
-  padding: 20px;
-}
-
-.toast-error {
-  background-color: #F44336 !important;  // Red background
-  color: white !important;               // White text
-}
-
-.toast-info {
-  background-color: #2196F3 !important;  // Blue background
-  color: white !important;               // White text
-}
-
-.toast-warning {
-  background-color: #FF9800 !important;  // Orange background
-  color: black !important;               // Black text
-}
